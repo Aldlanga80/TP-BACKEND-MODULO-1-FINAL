@@ -1,3 +1,4 @@
+import { console } from "inspector";
 import "./database/mongo.js";
 import { createProduct, getProducts, getProductById, updateProduct, deleteProduct } from "./services/product.service";
 
@@ -25,6 +26,17 @@ async function main() {
     stock: 10,
   });
 
+  console.log("✅ Productos creados:", producto1, producto2, "\n");
+
+  /*------------------------------------------------*/
+
+  const todosLosProductos = await getProducts();
+  console.log("Todos los products", todosLosProductos, "\n");
+
+  /*------------------------------------------------*/
+
+  const productoId = producto1._id.toString();
+  const productoBuscado = await getProductById(productoId);
 
 }
 
