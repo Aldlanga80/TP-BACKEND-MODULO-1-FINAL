@@ -37,6 +37,26 @@ async function main() {
 
   const productoId = producto1._id.toString();
   const productoBuscado = await getProductById(productoId);
+  console.log("Producto buscado por ID:", productoBuscado, "\n");
+
+  /*------------------------------------------------*/
+
+  const productoActualizado = await updateProduct(productoId, {
+    price: 16000,
+    stock: 8,
+  });
+  console.log("Producto Actualizado:", productoActualizado, "\n");
+
+  /*------------------------------------------------*/
+
+  const productoEliminado = await deleteProduct(producto2._id.toString());
+  console.log("Producto Eliminado:", productoEliminado, "\n");
+
+  /*------------------------------------------------*/
+
+  const productosFinales = await getProducts();
+  console.log("Productos en la base de datos:", productosFinales);
 
 }
 
+main().catch((err) => console.error("Error en el main:", err));
