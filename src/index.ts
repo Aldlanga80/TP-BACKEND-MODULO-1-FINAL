@@ -1,6 +1,6 @@
 import { console } from "inspector";
 import "./database/mongo.js";
-import { createProduct, getProducts, getProductById, updateProduct, deleteProduct } from "./services/product.service";
+import { createProduct, getProducts, getProductById, updateProduct, deleteProduct } from "./services/product.service.js";
 
 async function main() {
   console.log("Iniciando con MongoDB y TypeScriptn");
