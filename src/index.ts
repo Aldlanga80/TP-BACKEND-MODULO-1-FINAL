@@ -1,4 +1,3 @@
-import { console } from "inspector";
 import "./database/mongo.js";
 import { createProduct, getProducts, getProductById, updateProduct, deleteProduct } from "./services/product.service.js";
 
